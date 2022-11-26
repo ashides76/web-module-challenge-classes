@@ -44,8 +44,35 @@ class Airplane {
 */
 
 class Person {
-  
+  constructor(name, age) {
+    this.name = name,
+    this.age = age
+    this.stomach = []
+  }
+  eat(edible) {
+    if (this.stomach.length < 10) {
+      this.stomach.push(edible);
+    } else {
+      return 'Too many items'
+    }
+  }
+  poop () {
+    this.stomach = [];
+  }
+  toString() {
+    return `${this.name} and ${this.age}`
+  }
 }
+
+const Mary = new Person ('Mary', 50)
+console.log(Mary);
+Mary.eat('🍓');
+Mary.eat('🥗');
+console.log(Mary.stomach);
+console.log(Mary.toString());
+Mary.poop();
+console.log(Mary.stomach);
+
 
 /*
   TASK 2
