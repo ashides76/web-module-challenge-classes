@@ -211,9 +211,36 @@ console.log(joe.grade(john, 'Sprint 2 - Advanced JavaScript'))
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 
-class Student {
-   
+class Student extends Lambdasian{
+  constructor(arrg) {
+    super(arrg);
+    this.previousBackground = arrg.previousBackground,
+    this.className = arrg.className,
+    this.favSubjects = arrg.favSubjects
+  }
+  listSubjects(){
+    return `Loving ${this.favSubjects.join(', ')}!`;
+  }
+  PRAssignment(subject){
+    return `${this.name} has submited a PR for ${subject}`
+  }
+  sprintChallenge(subject){
+    return `${this.name} has begun sprint challenge on ${subject}`
+  }
 }
+
+const mary = new Student({
+  name: 'Mary',
+  age: 30,
+  location: 'Utah',
+  previousBackground: 'Art',
+  className: 'Web',
+  favSubjects: ['JavaScript', 'HTML', 'CSS', 'React', 'NodeJS']
+})
+console.log(mary);
+console.log(mary.listSubjects());
+console.log(mary.PRAssignment(mary.favSubjects[0]))
+console.log(mary.sprintChallenge(mary.favSubjects[3]))
 
 /*
   TASK 6
