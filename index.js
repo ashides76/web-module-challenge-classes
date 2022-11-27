@@ -256,10 +256,33 @@ console.log(mary.sprintChallenge(mary.favSubjects[3]))
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 
-class ProjectManager {
-   
+class ProjectManager extends Instructor {
+  constructor(arrg) {
+    super(arrg);
+    this.gradClassName = arrg.gradClassName,
+    this.favInstructor = arrg.favInstructor
+  }
+  standUp(channel){
+    return `${this.name} announces to ${channel}, @channel standy times!`
+  }
+  debugsCode(studentObj, subject){
+    return `${this.name} debugs ${studentObj.name}'s code on ${subject}`
+  }
 }
 
+const david = new ProjectManager({
+  name: 'David',
+  age: 50,
+  location: 'New York',
+  specialty: 'Classes',
+  favLanguage: 'JavaScript',
+  catchPhrase: "Don't forget to add notes to the code",
+  gradClassName: 'Web',
+  favInstructor: 'John Doe'
+})
+console.log(david);
+console.log(david.standUp('FullStack Web'))
+console.log(david.debugsCode(mary, 'JavaScript'))
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
