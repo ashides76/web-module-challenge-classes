@@ -167,9 +167,33 @@ console.log(john.speak());
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 
-class Instructor {
-
+class Instructor extends Lambdasian{
+  constructor(arrg) {
+    super(arrg);
+    this.specialty = arrg.specialty,
+    this.favLanguage = arrg.favLanguage,
+    this.catchPhrase = arrg.catchPhrase
+  }
+  demo(str){
+    return `Today we are learning about ${str} where subject is the param passed in`
+  }
+  grade(studentObj, subject) {
+    return `${studentObj.name} receives a perfect score on ${subject}`
+  }
 }
+
+const joe = new Instructor({
+  name: 'Joe',
+  age: 45,
+  location: 'California',
+  specialty: 'Classes',
+  favLanguage: 'JavaScript',
+  catchPhrase: "Don't forget to add notes to the code"
+})
+
+console.log(joe);
+console.log(joe.demo('Advanced JS'));
+console.log(joe.grade(john, 'Sprint 2 - Advanced JavaScript'))
 
 /*
   TASK 5
