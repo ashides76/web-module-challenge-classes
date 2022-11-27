@@ -21,6 +21,7 @@ class Airplane {
     this.isFlying = false;
   }
 }
+console.log(Airplane)
 
 /*
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -89,8 +90,34 @@ console.log(Mary.stomach);
 */
 
 class Car {
-  
+  constructor(model, milesPerGallon) {
+    this.model = model,
+    this.milesPerGallon = milesPerGallon,
+    this.tank = 0,
+    this.odometer = 0
+  }
+  fill(gallons) {
+    return this.tank += gallons;
+  }
+  dirve(distance) {
+    const milesCanDrive = this.tank * this.milesPerGallon;
+    if (distance <= milesCanDrive) {
+      this.odometer = this.odometer + distance;
+      this.tank = this.tank - (distance / this.milesPerGallon)
+    } else {
+      this.odometer = this.odometer + milesCanDrive
+      this.tank = 0;
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
+  }
 }
+
+const civic = new Car('2006 Honda Civic', 40)
+console.log(civic);
+console.log(civic.fill(10));
+console.log(civic.dirve(500))
+console.log(civic.odometer, civic.tank);
+
 
 /*
   TASK 3
@@ -106,7 +133,7 @@ class Car {
 */
 
 class Lambdasian {
-  
+
 }
 
 /*
