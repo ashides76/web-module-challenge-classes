@@ -133,8 +133,24 @@ console.log(civic.odometer, civic.tank);
 */
 
 class Lambdasian {
-
+  constructor(arrg) {
+    this.name = arrg.name,
+    this.age = arrg.age,
+    this.location = arrg.location
+  }
+  speak(){
+    return `Hello my name is ${this.name}, I am from ${this.location}`
+  }
 }
+
+const john = new Lambdasian({
+  name: 'John',
+  age: 30,
+  location: 'Arizona'
+})
+
+console.log(john);
+console.log(john.speak());
 
 /*
   TASK 4
