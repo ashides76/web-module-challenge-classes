@@ -99,7 +99,7 @@ class Car {
   fill(gallons) {
     return this.tank += gallons;
   }
-  dirve(distance) {
+  drive(distance) {
     const milesCanDrive = this.tank * this.milesPerGallon;
     if (distance <= milesCanDrive) {
       this.odometer = this.odometer + distance;
@@ -111,13 +111,11 @@ class Car {
     }
   }
 }
-
 const civic = new Car('2006 Honda Civic', 40)
 console.log(civic);
 console.log(civic.fill(10));
-console.log(civic.dirve(500))
+console.log(civic.drive(500))
 console.log(civic.odometer, civic.tank);
-
 
 /*
   TASK 3
